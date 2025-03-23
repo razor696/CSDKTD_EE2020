@@ -1,0 +1,14 @@
+% Tim thong so cua he thong:
+% Do cung k cua lo xo: k1_hat
+% He so ma sat tren m1: b1_hat
+a1 = T*T*(2*x1(2:N-1) - x2(2:N-1));
+a2 = T*(x1(2:N-1) - x1(1:N-2));
+PHI = [a1 a2];
+lamda = (2*x1(2:N-1) - x1(1:N-2) - x1(3:N))*m1;
+theta = inv(PHI'*PHI)*PHI'*lamda;
+k1_hat = theta(1)
+b1_hat = theta(2)
+% Sinh vien tham khao doan code o tren
+% de tim thong so cua he thong:
+% He so khuech dai U = K.F: K_hat
+% He so ma sat tren m2: b2_hat
